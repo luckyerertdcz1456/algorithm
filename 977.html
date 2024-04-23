@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        给你一个按 非递减顺序 排序的整数数组 nums，返回 每个数字的平方 组成的新数组，要求也按 非递减顺序 排序。
+        */
+        /**
+  * @param {number[]} nums
+  * @return {number[]}
+  */
+        //双指针
+        var sortedSquares = function (nums) {
+            let left = 0
+            let right = nums.length - 1
+            let k = nums.length - 1
+            let resArr = []
+            while (left <= right) {
+                if (nums[left] * nums[left] >= nums[right] * nums[right]) {
+                    resArr[k] = nums[left] * nums[left]
+                    k--
+                    left++
+                } else {
+                    resArr[k] = nums[right] * nums[right]
+                    k--
+                    right--
+                }
+            }
+            return resArr
+        };
+    </script>
+</body>
+
+</html>
