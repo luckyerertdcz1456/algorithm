@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        给你一个链表的头节点 head 和一个整数 val ，请你删除链表中所有满足 Node.val == val 的节点，并返回 新的头节点 。
+        */
+        var removeElements = function (head, val) {
+            const ret = new ListNode(0, head);
+            console.log("ret",ret);
+            let cur = ret;
+            while (cur.next) {
+                if (cur.next.val === val) {
+                    cur.next = cur.next.next
+                    continue
+                }
+                cur = cur.next
+                console.log('cur',cur);
+            }
+            return ret.next
+        };
+        removeElements([1,2,3,4,5],2)
+    </script>
+</body>
+
+</html>
