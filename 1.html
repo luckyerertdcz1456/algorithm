@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function (nums, target) {
+    /* let a = nums.length;
+    let b = [];
+    for (let i = 0; i < a - 1; i++) {
+        for (let j = i + 1; j < a; j++) {
+            if (nums[i] + nums[j] === target) {
+                b[0] = i;
+                b[1] = j
+                return b;
+            }
+        }
+    } */
+    let hash={};
+    for(let i=0;i<nums.length;i++){
+        if(hash[target-nums[i]]!==undefined){
+            return [i,hash[target-nums[i]]]
+        }
+        hash[nums[i]]=i;
+    }
+    return []
+};
+    </script>
+</body>
+</html>
