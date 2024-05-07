@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @param {number[]} nums3
+ * @param {number[]} nums4
+ * @return {number}
+ */
+var fourSumCount = function (nums1, nums2, nums3, nums4) {
+    const twoSumMap = new Map()
+    let count = 0
+    for (let n1 of nums1) {
+        for (let n2 of nums2) {
+            let sum = n1 + n2
+            twoSumMap.set(sum, (twoSumMap.get(sum) || 0) + 1)
+        }
+    }
+    for (let n3 of nums3) {
+        for (let n4 of nums4) {
+            let sum = 0 - (n3 + n4)
+            count += twoSumMap.get(sum) || 0
+        }
+    }
+    return count
+};
+    </script>
+</body>
+</html>
