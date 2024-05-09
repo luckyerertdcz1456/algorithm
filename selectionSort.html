@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //选择排序
+        const arr = [1, 5, 3, 8, 2, 3, 9, 4]
+        function selectionSort(arr) {
+
+            for (let i = 0; i < arr.length; i++) {//
+                let index = i
+                for (let j = i; j < arr.length; j++) {//内层函数找最小值
+                    if (arr[j] < arr[index]) {
+                        index = j
+                    }
+                    
+                }
+                
+                console.log(arr);
+            }
+        }
+        selectionSort(arr)
+    </script>
+</body>
+
+</html>
