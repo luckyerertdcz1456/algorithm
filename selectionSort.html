@@ -10,7 +10,7 @@
 <body>
     <script>
         //选择排序
-        const arr = [1, 5, 3, 8, 2, 3, 9, 4]
+       /*  const arr = [1, 5, 3, 8, 2, 3, 9, 4]
         function selectionSort(arr) {
 
             for (let i = 0; i < arr.length; i++) {//
@@ -25,7 +25,22 @@
                 console.log(arr);
             }
         }
-        selectionSort(arr)
+        selectionSort(arr) */
+        /* let outObj = {
+  inObj: {a: 1, b: 2}
+}
+let newObj = {...outObj}
+console.log(newObj);
+
+newObj.inObj.a = 2
+console.log(outObj) // {inObj: {a: 2, b: 2}} */
+function sum(...args) {
+    console.log(args);
+  return args.reduce((acc, val) => acc + val, 0);
+}
+
+console.log(sum(1, 2, 3, 4, 5)); // 输出 15
+
     </script>
 </body>
 
