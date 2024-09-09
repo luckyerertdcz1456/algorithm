@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+//  Definition for a binary tree node.
+ function TreeNode(val, left, right) {
+     this.val = (val===undefined ? 0 : val)
+     this.left = (left===undefined ? null : left)
+     this.right = (right===undefined ? null : right)
+ }
+
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var maxDepth = function(root) {
+  //使用递归的方法 递归三部曲
+    //1. 确定递归函数的参数和返回值
+    const getdepth = function(node) {
+    //2. 确定终止条件
+        if(node === null) {
+            return 0;
+        }
+    //3. 确定单层逻辑
+        let leftdepth = getdepth(node.left);
+        let rightdepth = getdepth(node.right);
+        let depth = 1 + Math.max(leftdepth, rightdepth);
+        return depth;
+    }
+    return getdepth(root);
+};
+let root=new TreeNode(3)
+root.left=new TreeNode(9)
+root.right=new TreeNode(20)
+root.right.left=new TreeNode(15)
+root.right.right=new TreeNode(17)
+console.log(maxDepth(root));
+
+  </script>
+</body>
+</html>
